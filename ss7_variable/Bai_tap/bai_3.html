@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<input placeholder="Nhập số thứ nhất" id="number1">
+<input placeholder="Nhập số thứ hai" id="number2">
+<button onclick="phepCong()">Cộng</button>
+<button onclick="phepTru()">Trừ</button>
+
+
+<script>
+
+  function phepCong(){
+    let number1 = +document.getElementById("number1").value;
+    let number2 = +document.getElementById("number2").value;
+    let result = number1 + number2;
+
+  }
+  function phepTru(){
+    let number1 = +document.getElementById("number1").value;
+    let number2 = +document.getElementById("number2").value;
+    let result = number1 - number2;
+  }
+  document.getElementById("result").innerHTML = "Result: " + result ;
+
+</script>
+
+
+</body>
+</html>

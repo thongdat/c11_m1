@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<!--<input placeholder="nhap diem toan" id="toan">-->
+<!--<input placeholder="nhap diem ly" id="ly">-->
+<!--<input placeholder="nhap diem hoa" id="hoa">-->
+<!--<button onclick="bai_tap()">Click</button>-->
+<!--<script>-->
+<!--  function bai_tap() {-->
+<!--    var toan = +document.getElementById("toan").value;-->
+<!--    var ly = +document.getElementById("ly").value;-->
+<!--    var hoa = +document.getElementById("hoa").value;-->
+<!--    var avg = (toan + ly + hoa) / 3;-->
+<!--    alert(avg);-->
+<!--  }-->
+</script>
+
+<script>
+  var physics = parseFloat(prompt ("Nhap diem mon vat li "));
+  var chemistry = parseFloat(prompt("Nhap diem mon hoa hoc:"));
+  var biology = parseFloat(prompt("Nhap diem mon sinh hoc:"));
+  var tong_diem = physics + chemistry + biology
+  var average = tong_diem / 3
+  document.write("tong_diem = " + tong_diem + "<br>");
+  document.write("average =" + average.toFixed("2") + "<br>");
+
+
+
+
+  var celsius = parseFloat(prompt("Nhap do C:"));
+  var fahrenheit = (celsius/5)*9+32
+  document.write("fahrenheit = " + fahrenheit + "<br>");
+
+  var radius = parseFloat(prompt("Nhap ban kinh"))
+  var area = radius * radius * 3.14
+  var circumference = radius * 2 * 3.14
+  document.write("area = " + area.toFixed("2") + "<br>")
+  document.write("circumference = " + circumference.toFixed("2") + "<br>")
+</script>
+
+
+</body>
+</html>
