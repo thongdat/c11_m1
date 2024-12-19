@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Kiểm tra năm nhuận</title>
+</head>
+<body>
+<script>
+    const year = +prompt("Enter year");
+    if (year % 4 == 0) {
+        if (year % 100 != 0) {
+            alert("nam nhuan")
+        } else {
+            if (year % 400 != 0) {
+                alert("nam ko nhuan")
+            } else {
+                alert("nam nhuan")
+            }
+        }
+    } else {
+        alert("nam ko nhuan")
+    }
+
+</script>
+
+</body>
+</html>
