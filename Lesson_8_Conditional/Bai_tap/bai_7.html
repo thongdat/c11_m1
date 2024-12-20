@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Tính cước điện thoại </title>
 </head>
 <body>
+
+
+<p id="tien"></p>
+<script>
+    let soPhutNoiMang = +prompt("So phut goi noi mang la");
+    let phiNoiMang = +prompt("Phi noi mang la");
+    let soPhutNgoaiMang = +prompt("So phut goi ngoai mang la");
+    let phiNgoaiMang = +prompt("Phi ngoai mang la");
+        let cuocNoiMang = soPhutNoiMang * phiNoiMang;
+        let cuocNgoaiMang = soPhutNgoaiMang * phiNgoaiMang;
+        let tongCuoc =  cuocNoiMang + cuocNgoaiMang ;
+
+        console.log("Tổng cước điện thoại: " + tongCuoc + " đồng");
+
+</script>
 
 </body>
 </html>
