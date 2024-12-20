@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng</title>
+</head>
+<body>
+<input placeholder="doanhthu" id="doanhthu">
+<button onclick="hoaHong()">click</button>
+<p id="result"></p>
+<script>
+    function hoaHong() {
+        let doanhthu = +document.getElementById("doanhthu").value;
+        if(doanhthu <= 20000000){
+            let result = doanhthu * 0.05;
+            document.getElementById("result").innerHTML ="Hoa hong nhan duoc la " + result;
+        }else if (doanhthu <= 40000000 && doanhthu > 20000000){
+            let result = 20000000 * 0.05 + (doanhthu - 20000000) * 0.1;
+            document.getElementById("result").innerHTML ="Hoa hong nhan duoc la " + result;
+        }else {
+            let result = 20000000 * 0.05 +  20000000 * 0.1 + (doanhthu - 40000000) * 0.2;
+            document.getElementById("result").innerHTML ="Hoa hong nhan duoc la " + result;
+        }
+    }
+</script>
+
+</body>
+</html>

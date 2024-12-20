@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+<input placeholder="Enter your age" id="age">
+<button onclick="dieukien()">Click</button>
+<p id="result"></p>
+<script>
+
+  function dieukien() {
+    let age = document.getElementById("age").value;
+    if (age >= 16) {
+      document.getElementById("result").innerHTML = "ban du dieu kien vao lop 10";
+    }else{
+        document.getElementById("result").innerHTML = "ban chua du dieu kien vao lop 10";
+    }
+  }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01</title>
+</head>
+<body>
+<input placeholder="Nhap a" id="a">
+<input placeholder="Nhap b" id="b">
+<button onclick="tinhToan()">Click</button>
+<p id="ketqua"></p>
+<script>
+  function tinhToan() {
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    if (a % b === 0){
+      document.getElementById("ketqua").innerHTML=a+" chia het cho" +b;
+    }
+    else
+      document.getElementById("ketqua").innerHTML=a+" khong chia het cho" +b;
+  }
+</script>
+
+</body>
+</html>

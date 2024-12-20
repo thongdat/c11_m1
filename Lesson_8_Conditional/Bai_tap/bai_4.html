@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</title>
+</head>
+<body>
+<input placeholder="nhap a" id="a">
+<input placeholder="nhap b" id="b">
+<input placeholder="nhap c" id="c">
+<button onclick="timMax()">Click</button>
+<p id="result"></p>
+<script>
+    function timMax() {
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c = +document.getElementById("c").value;
+        if (a > b) {
+            if (a > c) {
+                document.getElementById("result").innerHTML =  "a la max";
+            } else {
+                document.getElementById("result").innerHTML =  "c la max";
+            }
+        } else {
+            if (b > c) {
+                document.getElementById("result").innerHTML = "b la max";
+            } else {
+                document.getElementById("result").innerHTML = "c la max";
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>

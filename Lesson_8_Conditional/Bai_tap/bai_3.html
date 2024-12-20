@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> số là lớn hay nhỏ hơn 0</title>
+</head>
+<body>
+<input placeholder="Enter a number" id="number">
+<button onclick="findNumber()">Click</button>
+<p id="result"></p>
+<script>
+    function findNumber() {
+        var number = document.getElementById("number").value;
+        if (number > 0) {
+            document.getElementById("result").innerHTML = number + " lon hon o";
+        } else if (number == 0) {
+            document.getElementById("result").innerHTML = number + " bang o";
+        } else {
+            document.getElementById("result").innerHTML = number + " be hon o";
+        }
+    }
+</script>
+
+</body>
+</html>
