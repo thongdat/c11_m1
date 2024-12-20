@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tính diện tích tam giác vuông</title>
+</head>
+<body>
+<input placeholder="nhap a" id="a">
+<input placeholder="nhap b" id="b">
+<button onclick="dienTich()">Click</button>
+<p id="result"></p>
+<script>
+  function dienTich() {
+    let a = +document.getElementById("a").value;
+    let b = +document.getElementById("b").value;
+    let area =   (a * b) /2;
+    if (a > 0 && b > 0) {
+      document.getElementById("result").innerHTML = area;
+    }else
+      document.getElementById("result").innerHTML = "khong hop le";
+  }
+  </script>
+
+</body>
+</html>

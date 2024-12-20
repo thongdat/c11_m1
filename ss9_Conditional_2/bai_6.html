@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Giải phương trình bậc 1</title>
+</head>
+<body>
+<input placeholder="nhap a" id="a">
+<input placeholder="nhap b" id="b">
+<button onclick="timX()">Click</button>
+<p id="result"></p>
+<script>
+  function timX() {
+    let a = +document.getElementById("a").value;
+    let b = +document.getElementById("b").value;
+    if (a == 0){
+      document.getElementById("result").innerHTML = "phuong trinh vo nghiem";
+    }else {
+      let x = -b / a;
+      document.getElementById("result").innerHTML = "nghiem cua phuong trinh la " + x ;
+    }
+
+
+  }
+</script>
+
+</body>
+</html>

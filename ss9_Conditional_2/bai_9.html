@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác</title>
+</head>
+<body>
+<input placeholder="nhap a" id="a">
+<input placeholder="nhap b" id="b">
+<input placeholder="nhap c" id="c">
+<button onclick="kiemTra()">Click</button>
+<p id="result"></p>
+<script>
+  function kiemTra() {
+    let a = +document.getElementById("a").value;
+    let b = +document.getElementById("b").value;
+    let c = +document.getElementById("c").value;
+    if ( a,b,c >0 && a + b >c, b + c > a && a + c > b) {
+      document.getElementById("result").innerHTML = 'day la 1 tam giac';
+
+    }else {
+      document.getElementById("result").innerHTML = 'Day khong phai la mot tam gaic';
+    }
+  }
+</script>
+
+</body>
+</html>

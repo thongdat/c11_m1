@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh lai</title>
+</head>
+<body>
+<input placeholder="So Tien Ban Dau" id="tienBanDau">
+<input placeholder="Lai suat hang thang" id="laiSuat">
+<input placeholder="So thang" id="thang">
+<button onclick="tinhlai()">Click</button>
+<p id="result"></p>
+<script>
+  function tinhlai() {
+    let tienBanDau = +document.getElementById("tienBanDau").value;
+    let laiSuat = +document.getElementById("laiSuat").value/100;
+    let thang = +document.getElementById("thang").value;
+    let tongNhan = tienBanDau * (Math.pow(1 + laiSuat, thang));
+    document.getElementById("result").innerHTML = "so tien nhan duoc la: " + tongNhan.toFixed("2");
+  }
+</script>
+
+
+</body>
+</html>

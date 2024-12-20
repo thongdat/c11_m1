@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2.</title>
+</head>
+<body>
+<input placeholder="nhap a" id="a">
+<input placeholder="nhap b" id="b">
+<input placeholder="nhap c" id="c">
+<button onclick="timX()">Click</button>
+<p id="result"></p>
+<script>
+  function timX() {
+    let a = +document.getElementById("a").value;
+    let b = +document.getElementById("b").value;
+    let c = +document.getElementById("c").value;
+    let denta = b * b - 4 * a * c;
+
+    if (denta < 0) {
+      document.getElementById("result").innerHTML = " Phuong trinh vo nghiem";
+    } else if (denta === 0) {
+      let x = -b / (2 * a);
+      document.getElementById("result").innerHTML = " Phuong trinh co nghiem la" + x;
+    } else {
+      let x1 = (-b - Math.sqrt(denta)) / (2 * a);
+      let x2 = (-b + Math.sqrt(denta)) / (2 * a);
+      document.getElementById("result").innerHTML = " Phuong trinh co nghiem thu nhat la " + x1.toFixed("2") +"<br/>"
+              + "Phuong trinh co nghiem thu 2 la " + x2.toFixed("2") ;
+    }
+  }
+
+
+</script>
+
+</body>
+</html>

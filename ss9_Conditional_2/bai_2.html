@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Chuyển từ mét sang feet</title>
+</head>
+<body>
+<input placeholder="nhap so m" id ="m">
+<button onclick="chuyenDoi()">click</button>
+<p id="result"></p>
+<script>
+  function chuyenDoi(){
+    let m = +document.getElementById("m").value;
+    let ft = m *3.2808;
+    if( m >=0 ){
+      document.getElementById("result").innerHTML= ft;
+      }else{
+      document.getElementById("result").innerHTML= "khong hop le";
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình tính thuế thu nhập cá nhân.</title>
+</head>
+<body>
+<input placeholder=" nhap thu nhap ca nhan" id="income">
+<button onclick="tinhTax()">Click</button>
+<p id="result"></p>
+<script>
+  function tinhTax() {
+    let income = parseInt(document.getElementById("income").value);
+    let tax = 0;
+    if (income <= 5000000) {
+      tax = income * 0.05;
+      document.getElementById("result").innerHTML ="Thue ca nhan la" + tax;
+    } else if (income <= 10000000) {
+      tax = 5000000 * 0.05 + (income - 5000000) * 0.1;
+      document.getElementById("result").innerHTML ="Thue ca nhan la" + tax;
+    } else if (income <= 18000000) {
+      tax = 5000000 * 0.05 + 5000000 * 0.1 + (income - 10000000) * 0.15;
+      document.getElementById("result").innerHTML ="Thue ca nhan la" + tax;
+    } else if (income <= 32000000) {
+      tax = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + (income - 18000000) * 0.2;
+      document.getElementById("result").innerHTML ="Thue ca nhan la" + tax;
+      } else {
+      tax = 5000000 * 0.05 + 5000000 * 0.1 + 8000000 * 0.15 + 14000000 * 0.2 + (income - 32000000) * 0.25;
+      document.getElementById("result").innerHTML ="Thue ca nhan la" + tax;
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>có phải là tuổi của một người</title>
+</head>
+<body>
+<input placeholder="Nhaptuoi" id="age">
+<button onclick="nhapTuoi()">Click</button>
+<p id="result"></p>
+<script>
+  function nhapTuoi() {
+  let age = +document.getElementById("age").value;
+  if( age > 0 && age <=120 ) {
+    document.getElementById("result").innerHTML = "la con nguoi";
+  }else {
+    document.getElementById("result").innerHTML = " khong phai la con nguoi";
+  }
+  }
+</script>
+
+</body>
+</html>
