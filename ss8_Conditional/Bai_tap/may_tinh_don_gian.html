@@ -5,30 +5,53 @@
     <title>Máy tính đơn giản</title>
 </head>
 <body>
-<form action="">
-  <input placeholder="" id="view" >
-  <br>
-  <button type="button" onclick="number()" >1</button>
-  <button onclick="number()" >2</button>
-  <button onclick="number()" >3</button>
-  <button onclick="phepCong()">+</button>
-  <br>
-  <button onclick="number()" >4</button>
-  <button onclick="number()" >5</button>
-  <button onclick="number()" >6</button>
-  <button onclick="phepTru()" >-</button>
-  <br>
-  <button onclick="number()" >7</button>
-  <button onclick="number()" >8</button>
-  <button onclick="number()" >9</button>
-  <button onclick="phepNhan()" >x</button>
-  <br>
-  <input type="reset" value="C" onclick="remove()">
-  <button onclick="number()" >0</button>
-  <button onclick="tinhToan()" >=</button>
-  <button onclick="phepChia" >/</button>
 
-</form>
+<input placeholder="" id="view">
+
+<br>
+<button type="button" onclick="number(1)">1</button>
+<button onclick="number(2)">2</button>
+<button onclick="number(3)">3</button>
+<button onclick="number('+')">+</button>
+<br>
+<button onclick="number(4)">4</button>
+<button onclick="number(5)">5</button>
+<button onclick="number(6)">6</button>
+<button onclick="number('-')">-</button>
+<br>
+<button onclick="number(7)">7</button>
+<button onclick="number(8)">8</button>
+<button onclick="number(9)">9</button>
+<button onclick="number('*')">*</button>
+<br>
+<button type="reset" onclick="reset()">C</button>
+<button onclick="number(0)">0</button>
+<button onclick="tinhToan()">=</button>
+<button type="button" onclick="number('/')">/</button>
+<script>
+    function number(kyTu) {
+        let x = document.getElementById("view").value;
+        document.getElementById("view").value = x + kyTu;
+        if ( x.includes("*") || x.includes("/") || x.includes("+")) {
+            alert("error");
+        } else if ( x.includes("/") || x.includes("-") || x.includes("*")) {
+            alert("error");
+        }
+    }
+
+    function tinhToan() {
+        let x = document.getElementById("view").value;
+        document.getElementById("view").value = eval(x);
+
+    }
+    function reset() {
+        let x = document.getElementById("view").value;
+        document.getElementById("view").value = "";
+    }
+
+
+</script>
+
 
 </body>
 </html>
