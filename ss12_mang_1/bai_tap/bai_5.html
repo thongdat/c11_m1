@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let chuoi ="-1 2 -3 4 -5 6";
+  let mang = chuoi.split(" ");
+  let index = 0;
+  let soAm = 0;
+  for(let i = 0; i < mang.length;i++){
+    num = parseFloat(mang[i]);
+    if(num < 0){
+      index = i;
+      soAm ++;
+      console.log(num + "là số âm");
+    }
+  } alert("Số lượng số âm trong chuỗi là: " + soAm);
+
+</script>
+
+</body>
+</html>

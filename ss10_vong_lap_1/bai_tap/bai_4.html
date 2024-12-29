@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+  let f1 = 0;
+  let f2 = 1;
+  console.log(f1);
+  console.log(f2);
+  for (let l = 1; l <= 10; l++) {
+    let k = f1 + f2;
+    console.log(k);
+    f1=f2;
+    f2=k;
+    if (k % 5 === 0) {
+      console.log("so dau tien chia het cho 5 la " + k);
+      break;
+    }
+  }
+</script>
+
+</body>
+</html>

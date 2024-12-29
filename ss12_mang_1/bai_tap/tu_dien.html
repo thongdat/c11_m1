@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="string">Nhập từ: </label>
+<input type="text" id="string">
+<button onclick="transcript()">Dịch</button>
+<p id="result"></p>
+<script>
+  function transcript() {
+    let array_english = ["hello", "dog", "cat", "fish", "bird"]
+    let array_viet = ["xinchao", "cho", "meo", "ca", "chim"]
+    var tuCanDich = document.getElementById("string").value.toLowerCase();
+
+
+    var viTri = array_english.indexOf(tuCanDich);
+
+
+    if (viTri !== -1) {
+      document.getElementById("result").innerHTML = "Từ tiếng Việt: " + array_viet[viTri];
+    } else {
+      document.getElementById("result").innerHTML = "Không tìm thấy từ cần tìm.";
+    }
+  }
+</script>
+
+</body>
+</html>
