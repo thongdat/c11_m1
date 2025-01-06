@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    kyTu()
+    function kyTu() {
+        let n = prompt("Có bao nhiêu ký tự trong mảng?");
+        let count = 0;
+        let arr = [];
+
+        for (let i = 0; i < n; i++) {
+            arr.push(prompt("Phần tử thứ " + (i + 1)));
+        }
+
+        alert(arr);
+        let p = prompt("nhap mot ki tu bat ki")
+        for (let i = 0; i <= arr.length; i++) {
+           if ( arr[i] === p){
+               count++;
+           }
+        }
+        if(count > 0){
+            alert(count)
+        }else {
+            alert('-1')
+        }
+
+
+    }
+</script>
+
+</body>
+</html>

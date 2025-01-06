@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="tong"></p>
+<script>
+    tinhToan()
+    function tinhToan() {
+        let n = +prompt('co bao nhieu phan tu trong mang')
+        let array = [];
+        for ( let i = 0; i < n ; i++) {
+            if (isNaN(n) || n <= 50 ) {
+            array.push(+prompt("nhap pt thu : "+ i))
+                }
+
+        }
+        alert(array)
+
+        let tongSoChan = 0;
+        let tongSoLe = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                tongSoChan += array[i];
+            } else {
+                tongSoLe += array[i];
+            }
+        }
+        let result = tongSoChan - tongSoLe;
+        document.getElementById("tong").innerHTML = result;
+    }
+
+
+</script>
+
+</body>
+</html>

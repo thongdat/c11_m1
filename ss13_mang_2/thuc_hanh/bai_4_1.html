@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function checkWord(word) {
+        let arr = word.split(" ")
+        let toUpCase = 0;
+        let toLowerCase = 0;
+
+        for (let index = 0; index < word.length; index++) {
+            if (word[index] === word[index].toUpperCase() && word[index].toLowerCase() !== word[index].toUpperCase()) {
+                toUpCase++;
+            } else if (word[index] === word[index].toLowerCase() && word[index].toLowerCase() !== word[index].toUpperCase()) {
+                toLowerCase++;
+            }
+        }
+        if (toLowerCase == toUpCase) {
+            alert('true')
+        } else {
+            alert('false')
+        }
+    }
+
+    checkWord("NGUyen Thi THAnh TamM")
+
+
+</script>
+
+</body>
+</html>

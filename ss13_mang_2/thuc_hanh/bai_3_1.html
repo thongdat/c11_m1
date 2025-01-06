@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    checkArray()
+    function checkArray(){
+        let n = +prompt("co bao nhieu pahn tu trong mang")
+        let arr = [];
+        for(let i=0; i < n;i++){
+            if ( isNaN(arr[i]) ||!Number.isNaN(arr[i])){
+                arr.push(+prompt("vi tri thu " + i))
+            }
+        } alert(arr)
+        arr.sort()
+            alert('ok')
+        
+
+
+
+    }
+</script>
+
+</body>
+</html>

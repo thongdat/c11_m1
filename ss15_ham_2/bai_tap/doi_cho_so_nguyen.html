@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+  chuyenDoi()
+
+   function chuyenDoi() {
+     let a = +prompt ('Enter a number');
+     let b = +prompt ('Enter a number');
+
+     document.write("gia tri cua so dau tien" +a)
+     document.write("<br>")
+     document.write("gia tri cua so thu hai " +b + "<br>" )
+     let arr = [];
+     arr.push(a)
+     arr.push(b)
+     document.write("hai so la"+arr +"<br>")
+     arr.reverse()
+     document.write("Sau khi chuyen doi " +arr)
+   }
+
+</script>
+
+</body>
+</html>

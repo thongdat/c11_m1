@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt(" nhap so phan tu ban can")
+    if(isNaN(n)||!Number.isInteger(n)){
+        alert("Gia tri nhap 0 hop le");
+
+    }
+    let arr = [];
+    for (let i = 1; i <= n; i++) {
+        if (isNaN(arr[i]) || !Number.isInteger(arr[i])) {
+            arr.push(+prompt("phan tu thu " + i));
+        }
+        alert(arr);
+        let countSc = 0;
+        let countSl = 0;
+        for (let i = 1; i <= arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                countSc++;
+            } else {
+                countSl++;
+            }
+        }
+        if (countSc == countSl) {
+            alert('ok')
+        } else {
+            alert('no')
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  checkArray()
+
+  function checkArray(arr) {
+    let n = +prompt("co bao nhieu phan tu trong mang");
+    arr = [];
+    for (var i = 0; i < n; i++) {
+      if (isNaN(arr[i]) || !Number.isInteger(arr[i])) {
+        arr.push(+prompt("phan tu thu" + i))
+      }
+      }
+      let half_arr = arr.length / 2;
+      for (let i = 0; i < half_arr; i++) {
+        if (arr[i] * arr[i] === arr[i + half_arr]) {
+          alert('true');
+        } else {
+          alert('false');
+        }
+      }
+
+
+  }
+</script>
+
+</body>
+</html>

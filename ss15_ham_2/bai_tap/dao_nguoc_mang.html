@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đảo ngược mảng </title>
+</head>
+<body>
+<script>
+  DaoNguocMang()
+  function DaoNguocMang() {
+    let n = +prompt("co bao nhieu phan tu trong mang")
+    let arr = []
+    for (let i = 0; i < n; i++) {
+      arr.push(+prompt("phan tu thu " +i))
+
+    }document.write(arr + '</br>')
+    arr.reverse()
+    document.write(arr)
+  }
+</script>
+
+</body>
+</html>

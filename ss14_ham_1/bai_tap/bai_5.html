@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input placeholder="nhap chu" id ="string">
+<button onclick="findStar()">Click Me</button>
+<p id="result"></p>
+<script>
+    let arr_1 =[ 'Polaris', 'Aldebaran', 'Deneb',' Vega', 'Altair',' Dubhe' , "Regulus"];
+    let arr_2 = ['Ursa Minor', 'Tarurus',' Cygnus', 'Lyra', 'Aquila', 'Ursa Major' , 'Leo']
+    function findStar(){
+        let arr = document.getElementById("string").value;
+        let viTri = arr.indexOf(arr);
+        if(viTri == -1){
+            document.getElementById("result").innerHTML = "ngoi sao la " + arr_1[viTri];
+        }else{
+            document.getElementById("result").innerHTML = "ngoi sao la " +arr_2[viTri];
+        }
+    }
+</script>
+
+</body>
+</html>
