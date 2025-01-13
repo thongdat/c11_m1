@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n = +prompt (" cos bao nhieu phan tu trong mang");
+  let arr = [];
+
+  for (let i = 0; i < n; i++) {
+    arr.push(+prompt('phan tu thu ' + i));
+  } alert(arr);
+  let count = 0;
+  let max = 0 ;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+     count = 1;
+     max = arr[i];
+    }else if (arr[i] === max) {
+      count ++
+    }
+  } alert ("so lon nhat la "+ max +" so la xuat hien" + count)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lí học sinh </title>
+</head>
+<body>
+<h1>Quan li hoc sinh</h1>
+<form method="post" action="" id="studentForm" onsubmit="saveStudent(); return false;">
+    <div>
+        <label for="stt">STT</label>
+        <input type="text" name="stt" id="stt"><br>
+    </div>
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name"><br><br>
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email"><br><br>
+    </div>
+    <div>
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+
+        </select>
+    </div>
+    <div>
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age"><br><br>
+    </div>
+    <div>
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" id="phoneNumber" name="phoneNumber"><br><br>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+    <div>
+        <button type="button" onclick="findStudent()">Find</button>
+    </div>
+
+</form>
+<table border="1">
+    <tr>
+        <th>STT</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Phone number</th>
+
+    </tr>
+    <tbody id="tableData"></tbody>
+</table>
+<script>
+    class Student {
+        constructor(stt, name, age, gender, email, phoneNumber) {
+            this.stt = stt;
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.email = email;
+            this.phoneNumber = phoneNumber;
+        }
+    }
+
+    let student1 = new Student(1, "dat", 19, "Male", "Thongdat@gmail.com", "1234567890");
+    let student2 = new Student(2, "at", 19, "Male", "Thongdac@gmail.com", "1234567890");
+    let student3 = new Student(3, "t", 19, "Male", "Thongdav@gmail.com", "1234567890");
+    let student4 = new Student(4, "d", 19, "Male", "Thongdas@gmail.com", "1234567890");
+    let studentList = [];
+    studentList.push(student1);
+    studentList.push(student2);
+    studentList.push(student3);
+    studentList.push(student4);
+
+    function displayStudents() {
+        const table = document.getElementById("tableData");
+        let data = '';
+        for (let i = 0; i < studentList.length; i++) {
+            data += `<tr>
+                       <td>${studentList[i].stt}</td>
+                       <td>${studentList[i].name}</td>
+                       <td>${studentList[i].age}</td>
+                       <td>${studentList[i].gender}</td>
+                       <td>${studentList[i].email}</td>
+                       <td>${studentList[i].phoneNumber}</td>
+                       <td><button onclick="editStudent(${i})">Edit</button><button onclick="deleteStudent(${i})">Delete</button>   </td>
+
+                     </tr>`;
+        }
+        table.innerHTML = data;
+
+    }
+
+    displayStudents();
+    let studentIndex = -1;
+
+    function saveStudent() {
+        let name = document.getElementById('name').value;
+        let age = document.getElementById('age').value;
+        let gender = document.getElementById('gender').value;
+        let email = document.getElementById('email').value;
+        let phoneNumber = document.getElementById('phoneNumber').value;
+
+        if (studentIndex !== -1) {
+            studentList[studentIndex].name = name;
+            studentList[studentIndex].age = age;
+            studentList[studentIndex].gender = gender;
+            studentList[studentIndex].email = email;
+            studentList[studentIndex].phoneNumber = phoneNumber;
+        } else {
+            const newStudent = new Student(studentList.length + 1, name, age, gender, email, phoneNumber);
+            studentList.push(newStudent);
+        }
+
+
+        for (let i = 0; i < studentList.length; i++) {
+            studentList[i].stt = i + 1;
+        }
+        document.getElementById("studentForm").reset();
+        displayStudents();
+        studentIndex = -1;
+    }
+
+    function findStudent() {
+        let name = document.getElementById('name').value;
+        const table = document.getElementById("tableData");
+        let data = '';
+        for (let i = 0; i < studentList.length; i++) {
+            if (studentList[i].name.includes(name)) {
+                data += `<tr>
+                       <td>${studentList[i].stt}</td>
+                       <td>${studentList[i].name}</td>
+                       <td>${studentList[i].age}</td>
+                       <td>${studentList[i].gender}</td>
+                       <td>${studentList[i].email}</td>
+                       <td>${studentList[i].phoneNumber}</td>
+                       <td></td>
+                     </tr>`;
+            }
+        }
+        table.innerHTML = data;
+
+
+    }
+
+    displayStudents();
+
+    function deleteStudent(index) {
+        if (confirm(`Bạn có muốn xóa học sinh "${studentList[index].name}" này không?`)) {
+            studentList.splice(index, 1);
+            for (let i = 0; i < studentList.length; i++) {
+                studentList[i].stt = i + 1;
+                displayStudents();
+            }
+
+
+        }
+    }
+
+    function editStudent(index) {
+        studentIndex = index;
+        document.getElementById('stt').value = studentList[index].stt;
+        document.getElementById('name').value = studentList[index].name;
+        document.getElementById('age').value = studentList[index].age;
+        document.getElementById('gender').value = studentList[index].gender;
+        document.getElementById('email').value = studentList[index].email;
+        document.getElementById('phoneNumber').value = studentList[index].phoneNumber;
+
+    }
+
+</script>
+
+</body>
+</html>

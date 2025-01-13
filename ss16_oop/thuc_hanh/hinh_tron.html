@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let giaTri = [];
+  class Radius {
+    constructor(radius) {
+      this.radius = radius;
+    }
+
+    getArea ( ) {
+
+      return  this.radius * this.radius * Math.PI;
+    }
+  }
+
+
+  let radius1 = new Radius(1);
+  let radius2 = new Radius(2);
+  let radius3 = new Radius(3);
+
+
+giaTri.push(radius1.getArea());
+giaTri.push(radius2.getArea());
+giaTri.push(radius3.getArea());
+
+  console.log(giaTri);
+
+</script>
+
+</body>
+</html>

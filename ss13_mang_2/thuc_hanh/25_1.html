@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt('Có bao nhiêu phần tử trong mảng');
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(+prompt('Phần tử thứ ' + (i + 1)));
+    }
+    alert(arr);
+    let arr1 = false;
+    for (let i = 0; i < arr.length; i++) {
+        if (timUoc(arr.slice(0, i + 1))) {
+            arr1 = true;
+        }else {
+            arr1 = false;
+            break;
+        }
+    }
+    if (arr1) {
+        alert('OK');
+    } else {
+        alert('NO');
+    }
+    function timUoc(arr) {
+        for (let i = 1; i < arr.length; i++) {
+            for (let j = 0; j < i; j++) {
+                if (arr[i] % arr[j] !== 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>

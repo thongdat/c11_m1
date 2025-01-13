@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>công tắc và bóng đèn</title>
+</head>
+<body>
+<script>
+    class ElectricLamp {
+
+        constructor() {
+            this.status = false;
+
+        }
+        getStatus() {
+            return this.status;
+        }
+        turnOn(){
+            this.status = true;
+        }
+        turnOff(){
+            this.status = false;
+        }
+    }
+    class SwitchLamp {
+        constructor() {
+            this.status = false;
+            this.lamp = null;
+        }
+        getLamp() {
+            return this.lamp;
+        }
+        setLamp(lamp) {
+            this.lamp = lamp;
+        }
+        connectToLamp(bongDen) {
+            this.lamp = bongDen;
+        }
+        switchOn() {
+            if (this.lamp != null) {
+                this.lamp.turnOn();
+            }else {
+                console.log("chua ket noi voi bong den")
+            }
+
+        }
+        switchOff() {
+            if (this.lamp != null) {
+                this.lamp.turnOff();
+            }else {
+                console.log("chua ket noi voi bong den")
+            }
+        }
+
+    }
+    let den = new ElectricLamp(true);
+    let congTac = new SwitchLamp();
+    congTac.connectToLamp(den);
+    console.log("den: " +den.getStatus())
+    congTac.switchOn();
+    console.log("den: " +den.getStatus())
+    congTac.switchOff();
+    console.log("den: " +den.getStatus())
+
+</script>
+
+</body>
+</html>

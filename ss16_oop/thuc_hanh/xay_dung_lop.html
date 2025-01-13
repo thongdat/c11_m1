@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp Date</title>
+
+</head>
+<body>
+<p id="ketQua"></p>
+<script>
+    const lopHoc = [];
+
+    class Student {
+        constructor(id, name, age, gender) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+    }
+
+    let student1 = new Student(1, "Dat", 19, "Male");
+    let student2 = new Student(2, "Trung", 19, "Male");
+    let student3 = new Student(3, "Tri", 19, "Male");
+    let student4 = new Student(4, "Ngu", 19, "Male");
+    lopHoc.push(student1);
+    lopHoc.push(student2);
+    lopHoc.push(student3);
+    lopHoc.push(student4);
+    console.log(lopHoc);
+    let data = `<table border = 1>
+                        <tr>
+                            <th>STT</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                        </tr>`
+    for (let i = 0; i < lopHoc.length; i++) {
+        data += `<tr>
+                        <td>${lopHoc[i].id}</td>
+                        <td>${lopHoc[i].name}</td>
+                        <td>${lopHoc[i].age}</td>
+                        <td>${lopHoc[i].gender}</td>
+                    </tr>`
+    }
+    data += `</table>`
+    document.getElementById("ketQua").innerHTML = data;
+
+
+</script>
+
+</body>
+</html>

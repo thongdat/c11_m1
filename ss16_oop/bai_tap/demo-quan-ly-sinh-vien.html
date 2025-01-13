@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>STT</th>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>chanh</td>
+    </tr>
+</table>
+
+<p id="ketQua"></p>
+<script>
+    let list = ["ss","nokia"]
+    let tableString = `<table>
+                            <tr>
+                                <th>STT</th>
+                                <th>Name</th>
+                            </tr>`;
+    for (let i = 0; i <list.length ; i++) {
+         tableString += `<tr>
+                            <td>${i + 1}</td>
+                            <td>${list[i]}</td>
+                         </tr>`
+    }
+    tableString += `<table>`;
+    document.getElementById("ketQua").innerHTML =tableString;
+
+</script>
+</body>
+</html>

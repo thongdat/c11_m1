@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt('co bao nhieu phan tu trong mang')
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr.push(+prompt('  phan tu thu ' + (i)));
+    }
+    alert(arr);
+    let arr2 = [];
+    for (let i = 0; i < n; i++) {
+        let sum = tinhTongUoc(arr[i]);
+        arr2.push(sum);
+    }
+    alert(arr2);
+
+    function tinhTongUoc(num) {
+        let sum = 0;
+        for (let i = 1; i <= num; i++) {
+            if (num % i === 0) {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+
+
+</script>
+
+</body>
+</html>

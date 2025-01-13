@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let sum = 0;
+  let sum1 = 0;
+
+  let n = +prompt("Có bao nhiêu phần tử trong mảng?");
+  let arr = [];
+
+
+  for (let i = 0; i < n; i++) {
+    arr.push(+prompt('Phần tử thứ ' + (i + 1)));
+  }
+
+  alert(arr);
+
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      sum += arr[i];
+
+    }
+    if (i % 2 !== 0) {
+      sum1 += arr[i];
+    }
+  }
+
+  alert("Tổng các số chẵn: " + sum);
+  alert("Tổng các số ở vị trí lẻ: " + sum1);
+</script>
+
+</body>
+</html>

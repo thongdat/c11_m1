@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function soNguyenTo(num){
+    if(num < 2){
+      return false;
+    }
+    for (let i = 2; i < Math.sqrt(num); i++) {
+      if(num % i == 0)
+      return false;
+    }
+    return true;
+  }
+  function checkSo(){
+    let n = +prompt("Nhập độ dài của mảng:");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+      arr.push(+prompt('Nhập phần tử thứ ' + (i + 1)));
+    }
+    alert(arr);
+    let allSo = true;
+    for (let i = 0; i < arr.length; i++) {
+      if (soNguyenTo(arr[i]) == false) {
+        allSo = false;
+        break;
+      }
+    }
+    if (allSo) {
+      document.write('yes');
+    }else {
+      document.write('no');
+    }
+  }
+  checkSo();
+</script>
+
+</body>
+</html>

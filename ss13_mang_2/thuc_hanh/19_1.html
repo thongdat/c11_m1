@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function checkWord(n) {
+    let arr = n.split(" ");
+    let result = '';
+    for (let i = 0; i < arr.length; i++) {
+      let word = arr[i];
+      for (let j = 0; j < word.length; j++){
+        let char = word[j];
+        if (char === char.toUpperCase()) {
+          result += char;
+        }
+    }
+
+    } console.log(result);
+  }
+  checkWord("Hello CoDeGym");
+
+
+
+</script>
+
+</body>
+</html>

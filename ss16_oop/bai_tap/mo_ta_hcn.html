@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<p id="ketQua"></p>
+<script>
+
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+        dienTich(){
+            return this.width * this.height;
+    }
+    chuVi(){
+            return ( this.width + this.height) *2;
+    }
+    displayRectangle(){
+            for (let i = 0; i < this.width; i++) {
+                for (let j = 0; j < this.height; j++) {
+                    document.write("*")
+                }
+                document.write("<br>")
+            }
+            return "";
+    }
+    setWidth(newWidth){
+            this.width = newWidth;
+    }
+    setHeight(newHeight){
+            this.height = newHeight;
+    }
+    }
+    let giaTri = new Rectangle(5, 4);
+    giaTri.setWidth(10);
+    giaTri.setHeight(8);
+    document.write("Dien tich cau hinh chu nhat la" +giaTri.dienTich());
+    document.write("</br>");
+    document.write("Chu vi hinh chu nhat la" +giaTri.chuVi());
+    document.write("</br>");
+
+    document.getElementById("ketQua").innerHTML = giaTri.displayRectangle();
+
+
+
+</script>
+
+</body>
+</html>

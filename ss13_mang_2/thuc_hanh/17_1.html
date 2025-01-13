@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkWord(n){
+       let arr = n.split(" ");
+
+
+       if (arr.length == 1){
+           document.write(arr[0]);
+       } else {
+          let result = '';
+          for (let i = 0; i < arr.length ;  i++){
+              result += arr[i].charAt(0);
+          }document.write(result);
+           }
+    }
+    checkWord("Xin chao cac ban");
+</script>
+
+</body>
+</html>

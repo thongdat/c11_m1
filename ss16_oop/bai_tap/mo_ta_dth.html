@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let list = [ "nokia", "iphone"]
+  class Mobile {
+    constructor(battery,draftMessage,isOn,inbox,sentMessage ) {
+      this.battery = battery;
+      this.draftMessage = draftMessage;
+      this.isOn = isOn;
+      this.sentMessage = sentMessage;
+      this.inbox = inbox;
+      this.turnOn() = isOn;
+      this.sentMessage = sentMessage;
+    }
+    turnOn(){
+      this.isOn = true;
+      console.log("Máy điện thoại đã được bật");
+    }
+    turnOff(){
+      this.isOn = false;
+      console.log("Máy điện thoại đã tắt");
+    }
+    chargeBattery(){
+      this.battery = 100;
+      console.log("Điện thoại đã được sạc đầy pin");
+    }
+    checkBattery (){
+      console.log(`Điện thoại còn ${this.battery}`);
+    }
+    composeMessage(message){
+      if(this.isOn){
+        this.draftMessage = message;
+        console.log(`Tin nhắn đang được soan: "${message}"`)
+      }
+    }
+
+  }
+</script>
+
+</body>
+</html>
