@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkArray(array) {
+        let arr = [];
+        for (let i = 0; i < array.length; i++) {
+            if (isFibonaci(array[i])) {
+                arr.push(array[i]);
+            }
+        }
+        arr.sort((a, b) => a - b);
+        return arr;
+    }
+
+    function isFibonaci(number) {
+        let f1 = 0;
+        let f2 = 1;
+        let k = 0;
+        if (number == 1 || number == 0) {
+            return true;
+        }
+        for (let i = 0; k <= number; i++) {
+            k = f1 + f2;
+            if (k == number) {
+                return true;
+            }
+            f1 = f2;
+            f2 = k;
+        }
+        return false;
+    }
+
+        alert(checkArray([1, 5, 6, 13, 9, 12, 8, 0, 5, 1]));
+</script>
+
+</body>
+</html>

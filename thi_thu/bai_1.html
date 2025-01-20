@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n = +prompt("co bao nhieu phan tu trong mang");
+  let arr = [];
+  for (let i = 0; i < n; i++) {
+    if (n < 50)
+      arr.push(+prompt("phan tu thu " + (i + 1)));
+  }
+  alert(arr);
+  let tongSoChan = 0;
+  let tongSoLe = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (i % 2 === 0) {
+      tongSoChan += arr[i];
+    } else if (i % 2 === 1) {
+      tongSoLe += arr[i];
+    }
+  }
+  let giaTri = tongSoChan - tongSoLe;
+  alert(giaTri);
+</script>
+
+</body>
+</html>

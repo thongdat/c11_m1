@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="" id="mayTinhForm" onsubmit="saveMayTinh(); return false;">
+    <div>
+        <label for="maMay">Mã máy</label>
+        <input type="text" name="maMay" id="maMay"><br>
+    </div>
+    <div>
+        <label for="tenMay">Tên Máy</label>
+        <input type="text" id="tenMay" name="tenMay"><br><br>
+    </div>
+    <div>
+        <label for="tenHang">Tên Hãng</label>
+        <input type="text" id="tenHang" name="tenHang"><br><br>
+    </div>
+    <div>
+        <label for="giaBan">Giá Bán</label>
+        <input type="text" id="giaBan" name="giaBan"><br><br>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+<table  border="1">
+    <tr>
+        <th>Mã máy</th>
+        <th>Tên Máy</th>
+        <th>Tên Hãng</th>
+        <th>Giá Bán</th>
+    </tr>
+    <tbody id="tableData"></tbody>
+
+</table>
+<script>
+    class MayTinh {
+        constructor(maMay, tenMay, tenHang, giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.tenHang = tenHang;
+            this.giaBan = giaBan;
+        }
+        getmaMay() {
+            return this.maMay;
+        }
+        setmaMay(maMay) {
+            this.maMay = maMay;
+        }
+        gettenMay() {
+            return this.tenMay;
+        }
+        settenMay(tenMay) {
+            this.tenMay = tenMay;
+        }
+        getGiaBan() {
+            return this.giaBan;
+        }
+        setGiaBan(giaBan) {
+            this.giaBan = giaBan;
+        }
+    }
+    let mayTinhList = [];
+    let mayTinh1 = new MayTinh("asdfasdf", "asus", "asus", 10000000);
+    let mayTinh2 = new MayTinh("asdfasdhfghf", "lenovo", "fpt", 18000000);
+    let mayTinh3 = new MayTinh("asdfgh", "dell", "fptshop", 20000000);
+    let mayTinh4 = new MayTinh("asdfasfghfghdf", "macbook", "fptxinchao", 15000000);
+    mayTinhList.push(mayTinh1);
+    mayTinhList.push(mayTinh2);
+    mayTinhList.push(mayTinh3);
+    mayTinhList.push(mayTinh4);
+    mayTinhList.sort((a, b) => b.giaBan - a.giaBan);
+
+    function display() {
+        let table = document.getElementById("tableData");
+        let data = '';
+        for (let i = 0; i < mayTinhList.length; i++) {
+            data += `<tr>
+<td>${mayTinhList[i].maMay}</td>
+<td>${mayTinhList[i].tenMay}</td>
+<td>${mayTinhList[i].tenHang}</td>
+<td>${mayTinhList[i].giaBan}</td>
+</tr>`;
+        }
+        table.innerHTML = data;
+    }
+    display();
+    let mayTinhIndex = -1;
+
+    function saveMayTinh() {
+        let maMay = document.getElementById("maMay").value;
+        let tenMay = document.getElementById("tenMay").value;
+        let tenHang = document.getElementById("tenHang").value;
+        let giaBan = document.getElementById("giaBan").value;
+
+
+        if (mayTinhIndex !== -1) {
+            mayTinhList[mayTinhIndex].maMay= maMay;
+            mayTinhList[mayTinhIndex].tenMay= tenMay;
+            mayTinhList[mayTinhIndex].tenHang = tenHang;
+            mayTinhList[mayTinhIndex].giaBan = giaBan;
+        } else {
+            const newMayTinh = new MayTinh( maMay,tenMay,tenHang,giaBan);
+            mayTinhList.push(newMayTinh);
+        }
+
+
+        document.getElementById("mayTinhForm").reset();
+        display();
+        mayTinhIndex = -1;
+    }
+    
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+.button {
+    color: #ff8000;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    color: #ff7300;
+    text-align: center;
+}
+
+.tong{
+    margin-left: 0;
+    border: 1px solid #ff7300;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 800px;
+    border-radius: 10px;
+}
+
+#stt {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+#name {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#email {
+
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+
+
+}
+
+.tong1 {
+
+    width: 300px;
+    margin-left: 0;
+}
+
+.tong2 {
+    margin-left: 0;
+    width: 300px;
+}
+
+#age {
+    margin-left: 70px;
+}
+
+#gender {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.tim {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#tableData {
+    margin-right: 100px;
+    margin-top: 50px;
+
+}
+#table {
+    padding-top: 20px;
+    width: 50%;
+    height: 400px;
+
+
+}
+#tableData {
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 1px;
+}
+
+#table tr {
+    transform: scale(1.2);
+    transform-origin: top center;
+}
+
+#tableData td, #tableData th {
+    padding: 10px;
+    text-align: center;
+}
+
+

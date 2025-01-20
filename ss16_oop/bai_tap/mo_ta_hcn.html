@@ -13,10 +13,10 @@
             this.width = width;
             this.height = height;
         }
-        dienTich(){
+    area(){
             return this.width * this.height;
     }
-    chuVi(){
+    perimeter(){
             return ( this.width + this.height) *2;
     }
     displayRectangle(){
@@ -38,9 +38,9 @@
     let giaTri = new Rectangle(5, 4);
     giaTri.setWidth(10);
     giaTri.setHeight(8);
-    document.write("Dien tich cau hinh chu nhat la" +giaTri.dienTich());
+    document.write("Dien tich cau hinh chu nhat la" +giaTri.area());
     document.write("</br>");
-    document.write("Chu vi hinh chu nhat la" +giaTri.chuVi());
+    document.write("Chu vi hinh chu nhat la" +giaTri.perimeter());
     document.write("</br>");
 
     document.getElementById("ketQua").innerHTML = giaTri.displayRectangle();
