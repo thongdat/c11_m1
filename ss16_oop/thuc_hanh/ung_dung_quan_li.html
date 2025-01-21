@@ -9,53 +9,51 @@
 <body>
 <img src="https://fptjobs.com/Media/Images/SurveyImages/Bia%20form.png" height="300" width="1920" alt="">
 <div class="content">
-    <div>
-        <h1> Quản lí học sinh</h1>
+    <div class="form-container">
+        <h1>Quản lí học sinh</h1>
 
         <form method="post" action="" id="studentForm" onsubmit="saveStudent(); return false;">
-            <div class="tong">
-                <div class="tong1">
-                    <div>
+            <div class="input-group">
+                <div class="form-column">
+                    <div class="form-field">
                         <label for="stt">STT</label>
-                        <input type="text" name="stt" id="stt"><br>
+                        <input type="text" name="stt" id="stt" placeholder="Nhập STT">
                     </div>
-                    <div>
+                    <div class="form-field">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name"><br><br>
+                        <input type="text" id="name" name="name" placeholder="Nhập tên">
                     </div>
-                    <div>
+                    <div class="form-field">
                         <label for="email">Email</label>
-                        <input type="text" id="email" name="email"><br><br>
+                        <input type="text" id="email" name="email" placeholder="Nhập email">
                     </div>
                 </div>
-                <div style="margin-left: 20px" class="tong2">
-                    <div>
+                <div class="form-column">
+                    <div class="form-field">
                         <label for="gender">Gender</label>
                         <select name="gender" id="gender">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-
                         </select>
                     </div>
-                    <div>
+                    <div class="form-field">
                         <label for="age">Age</label>
-                        <input type="text" id="age" name="age"><br><br>
+                        <input type="text" id="age" name="age" placeholder="Nhập tuổi">
                     </div>
-                    <div>
+                    <div class="form-field">
                         <label for="phoneNumber">Phone Number</label>
-                        <input type="text" id="phoneNumber" name="phoneNumber"><br><br>
-                    </div>
-                    <div>
-                        <button class="button" type="submit">Save</button>
-                        <button class="tim" type="button" onclick="findStudent()">Find</button>
+                        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Nhập số điện thoại">
                     </div>
                 </div>
             </div>
-
+            <div class="form-buttons">
+                <button class="button save-btn" type="submit">Save</button>
+                <button class="button find-btn" type="button" onclick="findStudent()">Find</button>
+            </div>
         </form>
     </div>
 </div>
-<table border="1">
+<table class="student-table">
     <tr>
         <th>STT</th>
         <th>Name</th>
@@ -106,8 +104,10 @@
         }
         table.innerHTML = data;
     }
+
     displayStudents();
     let studentIndex = -1;
+
     function saveStudent() {
         let name = document.getElementById('name').value;
         let age = document.getElementById('age').value;
@@ -132,6 +132,7 @@
         displayStudents();
         studentIndex = -1;
     }
+
     function findStudent() {
         let name = document.getElementById('name').value;
         const table = document.getElementById("tableData");
@@ -152,6 +153,7 @@
         }
         table.innerHTML = data;
     }
+
     displayStudents();
 
     function deleteStudent(index) {
@@ -163,6 +165,7 @@
             }
         }
     }
+
     function editStudent(index) {
         studentIndex = index;
         document.getElementById('stt').value = studentList[index].stt;
