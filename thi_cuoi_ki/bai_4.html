@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Quản lí khách hàng</h1>
+<form method="post" action="" id="customerForm" onsubmit="saveCustomer(); return false;">
+    <div class="form-field">
+        <label for="idCustomer">ID</label>
+        <input type="text" name="idCustomer" id="idCustomer" placeholder="ID">
+    </div>
+    <div class="form-field">
+        <label for="nameCustomer">Name</label>
+        <input type="text" id="nameCustomer" name="nameCustomer" placeholder="Name">
+    </div>
+    <div class="form-field">
+        <label for="phoneNumber">Phone</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone">
+    </div>
+    <div>
+        <label for="address">address</label>
+        <input type="text" id="address" name="address" placeholder="address">
+    </div>
+    <div>
+        <label for="email">email</label>
+        <input type="text" id="email" name="email" placeholder="email">
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+
+<table border ="1" style="width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+        <th>Email</th>
+    </tr>
+    <tbody id="tableData"></tbody>
+</table>
+<script>
+    class Customer {
+        constructor(idCustomer, nameCustomer, phoneNumber, address, email) {
+            this.idCustomer = idCustomer;
+            this.nameCustomer = nameCustomer;
+            this.phoneNumber = phoneNumber;
+            this.address = address;
+            this.email = email;
+        }
+    }
+
+    let customer1 = new Customer("KH1", "Dat", 123456789, "Hue", "hovanthongdat@gmail.com");
+    let customer2 = new Customer("KH2", "Tri", 123123123, "Da Nang", "hongdat@gmail.com");
+    let customerList = [];
+    customerList.push(customer1);
+    customerList.push(customer2);
+
+    function displayCustomers() {
+        const table = document.getElementById("tableData");
+        let data = '';
+        for (let i = 0; i < customerList.length; i++) {
+            data += `<tr>
+                   <td>${customerList[i].idCustomer}</td>
+                   <td>${customerList[i].nameCustomer}</td>
+                   <td>${customerList[i].phoneNumber}</td>
+                   <td>${customerList[i].address}</td>
+                   <td>${customerList[i].email}</td>
+                 </tr>`;
+        }
+        table.innerHTML = data;
+    }
+
+    displayCustomers();
+    let customerIndex = -1;
+
+    function saveCustomer() {
+        let idCustomer = document.getElementById('idCustomer').value;
+        let nameCustomer = document.getElementById('nameCustomer').value;
+        let phoneNumber = document.getElementById('phoneNumber').value;
+        let email = document.getElementById('email').value;
+        let address = document.getElementById('address').value;
+
+        for (let i = 0; i < customerList.length; i++) {
+            if (i !== customerIndex && customerList[i].email === email) {
+                alert("Email đã có sẵn, vui lòng nhập lại");
+                return;
+            }
+            if (i !== customerIndex && customerList[i].phoneNumber === phoneNumber) {
+                alert("Số điện thoại này đã có sẵn, vui lòng nhập số mới");
+                return;
+            }
+        }
+        if (customerIndex !== -1) {
+            customerList[customerIndex].idCustomer = idCustomer;
+            customerList[customerIndex].nameCustomer = nameCustomer;
+            customerList[customerIndex].phoneNumber = phoneNumber;
+            customerList[customerIndex].address = address;
+            customerList[customerIndex].email = email;
+        } else {
+            const newCustomer = new Customer(idCustomer, nameCustomer, phoneNumber, address, email);
+            customerList.push(newCustomer);
+        }
+        document.getElementById("customerForm").reset();
+        displayCustomers();
+        customerIndex = -1;
+    }
+</script>
+
+</body>
+</html>

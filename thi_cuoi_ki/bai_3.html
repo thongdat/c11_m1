@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhap so phan tu trong mang");
+    if (n >= 50) {
+        alert("So phan tu be hon 50, vui long nhap lai");
+    } else {
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr.push(+prompt("Phan tu thu " + (i + 1)));
+        }
+        alert(arr);
+        let k = +prompt("Nhập số nguyên dương k:");
+        let demSoLuong = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if ((arr[i] + arr[j]) % k === 0) {
+                    demSoLuong++;
+                }
+            }
+        }
+        alert("so cap chia het cho " + k + " la " + demSoLuong);
+    }
+</script>
+
+</body>
+</html>

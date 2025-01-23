@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("nhap so phan tu trong mang");
+    let arr = [];
+    let sum = 0
+    for (let i = 0; i < n; i++) {
+        if (n >= 20) {
+            alert("So phan tu be hon 20, vui long nhap lai!");
+        } else {
+            arr.push(+prompt("Phan tu thu " + (i + 1)))
+        }
+    }
+    alert(arr);
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 3 === 0 && arr[i] % 5 === 0) {
+            sum += arr[i];
+        }
+    }
+    alert(sum);
+</script>
+
+</body>
+</html>

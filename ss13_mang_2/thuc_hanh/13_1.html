@@ -6,44 +6,34 @@
 </head>
 <body>
 <script>
-  function isPrime(num) {
-    if (num < 2) return false;
-    for (let i = 2; i <= Math.sqrt(num); i++) {
-      if (num % i === 0) return false;
-    }
-    return true;
-  }
-  function checkArray() {
-    let n = +prompt("Nhập độ dài của mảng:");
-    let arr = [];
-
-
-    for (let i = 0; i < n; i++) {
-      arr.push(+prompt('Nhập phần tử thứ ' + (i + 1)));
+    function isPrime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
     }
 
-
-    alert(arr);
-
-
-    let allPrime = true;
-    for (let i = 0; i < arr.length; i++) {
-      if (!isPrime(arr[i])) {
-        allPrime = false;
-        break;
-      }
+    function checkArray() {
+        let n = +prompt("Nhập độ dài của mảng:");
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr.push(+prompt('Nhập phần tử thứ ' + (i + 1)));
+        }
+        alert(arr);
+        let allPrime = true;
+        for (let i = 0; i < arr.length; i++) {
+            if (!isPrime(arr[i])) {
+                allPrime = false;
+                break;
+            }
+        }
+        if (allPrime) {
+            alert("OK");
+        } else {
+            alert("NO");
+        }
     }
-
-
-    if (allPrime) {
-      alert("OK");
-    } else {
-      alert("NO");
-    }
-  }
-
-
-
     checkArray();
 
 </script>

@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<img src="https://fptjobs.com/Media/Images/SurveyImages/Bia%20form.png" height="300" width="1920" alt="">
+<img src="https://fptjobs.com/Media/Images/SurveyImages/Bia%20form.png" height="300" width="1520" alt="">
 <div class="content">
     <div class="form-container">
         <h1>Quản lí học sinh</h1>
@@ -17,7 +17,7 @@
                 <div class="form-column">
                     <div class="form-field">
                         <label for="stt">STT</label>
-                        <input type="text" name="stt" id="stt" placeholder="Nhập STT">
+                        <input type="text" name="stt" id="stt" placeholder="Nhập STT" disabled>
                     </div>
                     <div class="form-field">
                         <label for="name">Name</label>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="form-field">
                         <label for="age">Age</label>
-                        <input type="text" id="age" name="age" placeholder="Nhập tuổi">
+                        <input type="date" id="age" name="age" placeholder="Nhập tuổi">
                     </div>
                     <div class="form-field">
                         <label for="phoneNumber">Phone Number</label>
@@ -65,7 +65,7 @@
     </tr>
     <tbody id="tableData"></tbody>
 </table>
-<script>
+v<script>
     class Student {
         constructor(stt, name, age, gender, email, phoneNumber) {
             this.stt = stt;
@@ -110,10 +110,22 @@
 
     function saveStudent() {
         let name = document.getElementById('name').value;
-        let age = document.getElementById('age').value;
+        let birthDate = document.getElementById('age').value;
         let gender = document.getElementById('gender').value;
         let email = document.getElementById('email').value;
         let phoneNumber = document.getElementById('phoneNumber').value;
+        let age = calculateAge(birthDate);
+
+        for (let i = 0; i < studentList.length; i++) {
+            if (i !== studentIndex && studentList[i].email === email) {
+                alert("Email đã có sẵn, vui lòng nhập lại");
+                return;
+            }
+            if (i !== studentIndex && studentList[i].phoneNumber === phoneNumber) {
+                alert("Số điện thoại này đã có sẵn, vui lòng nhập số mới");
+                return;
+            }
+        }
 
         if (studentIndex !== -1) {
             studentList[studentIndex].name = name;
@@ -132,7 +144,17 @@
         displayStudents();
         studentIndex = -1;
     }
+    function calculateAge(birthDate) {
+        let today = new Date();
+        let birth = new Date(birthDate);
+        let age = today.getFullYear() - birth.getFullYear();
+        let monthDiff = today.getMonth() - birth.getMonth();
 
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+            age--;
+        }
+        return age;
+    }
     function findStudent() {
         let name = document.getElementById('name').value;
         const table = document.getElementById("tableData");
